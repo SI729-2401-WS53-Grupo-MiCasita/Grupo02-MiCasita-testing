@@ -1,11 +1,18 @@
-Feature: Busqueda por Filtros
+Feature: Agregar Propiedad
 
-    Escenario: Búsqueda exitosa con filtros
-Given el usuario está en la página de búsqueda
-When aplica filtros de búsqueda
-Then se muestran las propiedades que coinciden con los criterios seleccionados.
+     Scenario: Agregar una propiedad con éxito
+    Given que el propietario está autenticado en el sistema
+    And el propietario está en la página de agregar nueva propiedad
+    When el propietario ingresa toda la información requerida de la propiedad
+    And hace clic en el botón "Guardar"
+    Then la nueva propiedad se guarda en el sistema
+    And el propietario ve un mensaje de confirmación de que la propiedad ha sido agregada con éxito.
 
-    Escenario: Sin resultados con filtros
-Given el usuario está en la página de búsqueda
-When aplica filtros de búsqueda que no tienen resultados
-Then se muestra un mensaje indicando que no hay propiedades que coincidan con los criterios seleccionados.
+
+     Scenario: Error al agregar una propiedad por información incompleta
+    Given que el propietario está autenticado en el sistema
+    And el propietario está en la página de agregar nueva propiedad
+    When el propietario ingresa información incompleta de la propiedad
+    And hace clic en el botón "Guardar"
+    Then la propiedad no se guarda en el sistema
+    And el propietario ve un mensaje de error indicando que la información está incompleta.
