@@ -1,3 +1,4 @@
+
 Feature: Gestión de Métodos de Pago
 
   Scenario: Adición Exitosa de un Método de Pago
