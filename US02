@@ -1,0 +1,22 @@
+Feature: Página de Contacto
+
+  Como visitante
+  Quiero poder acceder a la página de contacto
+  Para ponerme en contacto con el equipo de la aplicación
+
+  Scenario: Acceso a la página de contacto
+    Given un visitante está en la página principal de la aplicación
+    When hace clic en el enlace "Contacto"
+    Then es dirigido a la página de contacto
+
+  Scenario: Visualización de información de contacto
+    Given el visitante está en la página de contacto
+    Then ve información clara sobre cómo contactar al equipo de la aplicación
+
+  Scenario: Uso del formulario de contacto
+    Given el visitante está en la página de contacto
+    And hay un formulario funcional disponible
+    When completa el formulario con una consulta válida
+    And envía el formulario
+    Then el equipo de la aplicación recibe la consulta
+    And el visitante recibe una confirmación de que la consulta ha sido enviada correctamente
